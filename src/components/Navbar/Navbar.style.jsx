@@ -112,8 +112,14 @@ const ResponsiveNav = styled.div`
   }
 `;
 
+const ConnectWhatsApp = styled.a`
+  text-decoration: none;
+  color: white;
+`
+
 
 export {
     Nav,
-    ResponsiveNav
+    ResponsiveNav,
+    ConnectWhatsApp
 }

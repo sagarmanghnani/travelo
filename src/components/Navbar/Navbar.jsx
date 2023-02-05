@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
-import {Nav, ResponsiveNav} from './Navbar.style';
+import {Nav, ResponsiveNav, ConnectWhatsApp} from './Navbar.style';
 
 
 export default function Navbar() {
   const [navbarState, setNavbarState] = useState(false);
+
+  const whatsAppConnectLink = () => {
+    return `https://wa.me/919810666451?text=Welcome to Dreamland holiday home`
+  }
+
   return (
     <>
       <Nav>
@@ -38,7 +43,9 @@ export default function Navbar() {
             <a href="#testimonials">Testimonials</a>
           </li>
         </ul>
-        <button>Connect</button>
+        <button>
+            <ConnectWhatsApp href={whatsAppConnectLink()} target='_blank'> Connect </ConnectWhatsApp>
+          </button>
       </Nav>
       <ResponsiveNav state={navbarState}>
         <ul>
