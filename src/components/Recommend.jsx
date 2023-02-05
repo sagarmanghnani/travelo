@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Destination1 from "../assets/Destination1.png";
 import Destination2 from "../assets/Destination2.png";
@@ -10,7 +10,19 @@ import info1 from "../assets/info1.png";
 import info2 from "../assets/info2.png";
 import info3 from "../assets/info3.png";
 
+import axios from 'axios';
+
 export default function Recommend() {
+  const [travelPackages, setTravelPackages] = useState([]);
+
+  const getAllPackages = async () => {
+    const axiosPackageData = await axios.get('https://api.npoint.io/ae387f37b1acf1288851');
+    setTravelPackages(axiosPackageData.data);
+  }
+  useEffect(() => {
+      getAllPackages();
+  }, [])
+
   const data = [
     {
       image: Destination1,
@@ -84,23 +96,23 @@ export default function Recommend() {
         </ul>
       </div>
       <div className="destinations">
-        {data.map((destination) => {
+        {travelPackages.map((destination) => {
           return (
             <div className="destination">
-              <img src={destination.image} alt="" />
-              <h3>{destination.title}</h3>
-              <p>{destination.subTitle}</p>
+              <img src={destination.primary_img_link} alt="" />
+              <h3>{destination.Destination}</h3>
+              <p>{destination.Description}</p>
               <div className="info">
                 <div className="services">
                   <img src={info1} alt="" />
                   <img src={info2} alt="" />
                   <img src={info3} alt="" />
                 </div>
-                <h4>{destination.cost}</h4>
+                <h4>{destination.Price}</h4>
               </div>
               <div className="distance">
                 <span>1000 Kms</span>
-                <span>{destination.duration}</span>
+                <span>{destination.time_duration}</span>
               </div>
             </div>
           );
