@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import avatarImage from "../../assets/avatarImage.jpeg";
+// import avatarImage from "../../assets/avatarImage.jpeg";
 import Section from './Testimonials.style'
 import axios from "axios";
 
 const CustomerFeedback = (props) => {
-  const {email, name, ratings, review} = props;
+  const {email, name, review} = props;
   return (
     <div className="testimonial">
           <p>
