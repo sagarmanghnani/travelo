@@ -7,12 +7,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials/Testimonials";
 import scrollreveal from "scrollreveal";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={
           <div>
           <ScrollToTop />
           <Navbar />
@@ -22,12 +19,6 @@ export default function App() {
           <Testimonials />
           <Footer />
         </div>
-        } ></Route>
-        <Route path="/packageInfo" element={
-          <div> Hello world </div>
-        }></Route>
-      </Routes>
-      
-    </Router>
+
   );
 }
