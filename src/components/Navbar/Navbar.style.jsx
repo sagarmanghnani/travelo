@@ -117,9 +117,16 @@ const ConnectWhatsApp = styled.a`
   color: white;
 `
 
+const Logo = styled.img`
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+`
+
 
 export {
     Nav,
     ResponsiveNav,
-    ConnectWhatsApp
+    ConnectWhatsApp,
+    Logo
 }

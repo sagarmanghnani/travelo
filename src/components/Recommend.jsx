@@ -78,7 +78,7 @@ export default function Recommend() {
   const [active, setActive] = useState(1);
   return (
     <Section id="recommend">
-      <div className="title">
+      {/* <div className="title">
         <h2>Recommended Destinations</h2>
       </div>
       <div className="packages">
@@ -94,7 +94,7 @@ export default function Recommend() {
             );
           })}
         </ul>
-      </div>
+      </div> */}
       <div className="destinations">
         {travelPackages.map((destination) => {
           return (

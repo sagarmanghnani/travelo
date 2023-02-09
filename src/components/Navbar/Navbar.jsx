@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.jpeg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
-import {Nav, ResponsiveNav, ConnectWhatsApp} from './Navbar.style';
+import {Nav, ResponsiveNav, ConnectWhatsApp, Logo} from './Navbar.style';
 
 
 export default function Navbar() {
@@ -17,8 +17,8 @@ export default function Navbar() {
       <Nav>
         <div className="brand">
           <div className="container">
-            <img src={logo} alt="" />
-            Dreamland holiday homes
+            <Logo src={logo} alt="Dreamland Holiday Homes" />
+            {/* Dreamland holiday homes */}
           </div>
           <div className="toggle">
             {navbarState ? (
